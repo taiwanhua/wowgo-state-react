@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/StateManage/index.tsx"],"names":["GCS","Redux","Native"],"mappings":"AAAA,OAAO,MAAMA,GAAG,GAAG,EAAZ;AACP,OAAO,MAAMC,KAAK,GAAG,EAAd;AACP,OAAO,MAAMC,MAAM,GAAG,EAAf","sourcesContent":["export const GCS = {};\r\nexport const Redux = {};\r\nexport const Native = {};\r\n"],"file":"index.js"}
