@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/index.tsx"],"names":[],"mappings":"AAAA,cAAc,eAAd","sourcesContent":["export * from './StateManage';"],"file":"index.js"}
+{"version":3,"sources":["../../src/index.tsx"],"names":["combineReducers"],"mappings":"AAAA,cAAc,qBAAd;AACA,SAASA,eAAT,QAAgC,OAAhC","sourcesContent":["export * from './StateManage/index'\nexport { combineReducers } from 'redux'"],"file":"index.js"}
