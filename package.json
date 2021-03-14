@@ -1,6 +1,6 @@
 {
-  "name": "wowgo-state-manage",
-  "version": "0.1.0",
+  "name": "wowgo-state-react",
+  "version": "0.1.1",
   "license": "MIT",
   "private": false,
   "dependencies": {

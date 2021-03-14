@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/StateManage/index.tsx"],"names":[],"mappings":"AAAA,cAAc,SAAd;AACA,cAAc,OAAd","sourcesContent":["export * from './Redux'\r\nexport * from './gcs'\r\n"],"file":"index.js"}
+{"version":3,"sources":["../../../src/StateManage/index.tsx"],"names":[],"mappings":"AAAA,cAAc,SAAd;AACA,cAAc,eAAd;AACA,cAAc,OAAd","sourcesContent":["export * from './Redux'\r\nexport * from './ReduxNextjs'\r\nexport * from './gcs'\r\n"],"file":"index.js"}
