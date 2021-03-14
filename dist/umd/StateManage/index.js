@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "./Redux", "./gcs"], factory);
+    define(["exports", "./Redux", "./gcs", "./ReactuseReducer"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("./Redux"), require("./gcs"));
+    factory(exports, require("./Redux"), require("./gcs"), require("./ReactuseReducer"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.Redux, global.gcs);
+    factory(mod.exports, global.Redux, global.gcs, global.ReactuseReducer);
     global.undefined = mod.exports;
   }
-})(this, function (exports, _Redux, _gcs) {
+})(this, function (exports, _Redux, _gcs, _ReactuseReducer) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -31,6 +31,15 @@
       enumerable: true,
       get: function () {
         return _gcs[key];
+      }
+    });
+  });
+  Object.keys(_ReactuseReducer).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function () {
+        return _ReactuseReducer[key];
       }
     });
   });

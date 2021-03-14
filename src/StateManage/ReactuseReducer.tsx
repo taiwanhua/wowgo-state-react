@@ -57,7 +57,7 @@ const Context = React.createContext({})
 //     );
 // };
 
-export interface ProviderProps {
+export interface ReactProviderProps {
     /** 
      * 需要使用本Context的所有子組件 
      */
@@ -102,7 +102,7 @@ export interface ProviderProps {
  * export default App;
  * 
  */
-export const WowgoReactProvider: React.FC<ProviderProps> = (props) => {
+export const WowgoReactProvider: React.FC<ReactProviderProps> = (props) => {
     // console.log(props)
     return (
         <Context.Provider value={props.store}>
