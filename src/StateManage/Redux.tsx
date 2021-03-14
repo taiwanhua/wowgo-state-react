@@ -93,7 +93,7 @@ export const useWowgoSelector = createSelectorHook(Context)
  *     ...
  * })
  *
- * const Stroe = createReduxStore(combinedReducer)
+ * const Stroe = createWowgoStore(combinedReducer)
  */
 export const createWowgoStore = (reducer: (initialState: any, action: any) => (any)) => createStore(reducer, composeWithDevTools());
 
@@ -117,9 +117,9 @@ export interface ProviderProps {
  * @example
  * const App = () => {
  * return (
- *   <ReduxProvider store={Stroe}>
+ *   <WowgoProvider store={Stroe}>
  *     <Components ... />
- *   </ReduxProvider>
+ *   </WowgoProvider>
  * );
  * }
  *
