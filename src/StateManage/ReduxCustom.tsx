@@ -2,11 +2,23 @@ import * as React from 'react'
 
 import {
     Provider,
-    useDispatch,
-    useSelector,
+    createStoreHook,
+    createDispatchHook,
+    createSelectorHook,
+    ReactReduxContextValue
 } from 'react-redux'
 import { AnyAction, createStore, Store } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
+
+/**
+ * 透過 React.createContext 創建的 Context
+ */
+const Context = React.createContext({} as ReactReduxContextValue<any, AnyAction>)
+
+/**
+ * WowgoStore hook
+ */
+export const useWowgoStore = createStoreHook(Context)
 
 /**
  * @returns dispatch 函數
@@ -23,12 +35,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
  *  )
  * 
  */
-export const useWowgoDispatch = () => {
-
-    const dispatch = useDispatch()
-
-    return dispatch;
-}
+export const useWowgoDispatch = createDispatchHook(Context)
 
 /**
  * 
@@ -54,16 +61,7 @@ export const useWowgoDispatch = () => {
  * 
  * export default AboutPage
  */
-export const useWowgoSelector = <Type, TSelected = unknown>(
-    selector: (state: Type) => TSelected,
-    equalityFn?: (left: TSelected, right: TSelected) => boolean
-): TSelected => {
-
-    const selectValue = useSelector<Type, TSelected>(selector, equalityFn)
-
-    return selectValue;
-}
-
+export const useWowgoSelector = createSelectorHook(Context)
 
 /**
  * 創建 WowgoStore，用以傳入 WowgoProvider
@@ -131,7 +129,7 @@ export interface ProviderProps {
 export const WowgoProvider: React.FC<ProviderProps> = (props) => {
     // console.log(props)
     return (
-        <Provider store={props.store}>
+        <Provider context={Context} store={props.store}>
             {props.children}
         </Provider>
     )
